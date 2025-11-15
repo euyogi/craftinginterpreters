@@ -122,7 +122,7 @@ we jam all sorts of logic into the tree classes.
 [interpreter design pattern]: https://en.wikipedia.org/wiki/Interpreter_pattern
 
 Instead, we're going to reuse our groovy [Single dispatch][] pattern. In the
-previous chapter, we created `pretty()` single dispatwch function. It took in a
+previous chapter, we created `pretty()` single dispatch function. It took in a
 syntax tree and recursively traversed it, building up a string which it
 ultimately returned. That's almost exactly what a real interpreter does, except
 instead of concatenating strings, it computes values.
