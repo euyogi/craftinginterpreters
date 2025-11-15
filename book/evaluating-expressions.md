@@ -803,7 +803,7 @@ constructor:
 ```python
 # lox/__main__.py Lox method
 def __init__(self, interactive: bool = False):
-    self.environment = Env()
+    self.environment: Env = {}
     self.interactive = interactive
 ```
 
