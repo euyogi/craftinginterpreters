@@ -360,6 +360,8 @@ def divide(left: float, right: float) -> float:
         return float("-inf")
 ```
 
+<aside name="subtle">
+
 Did you notice we pinned down a subtle corner of the language semantics here? In
 a binary expression, we evaluate the operands in left-to-right order. If those
 operands have side effects, that choice is user visible, so this isn't simply an
