@@ -661,7 +661,7 @@ dictionaries:
 
 ```python
 # lox/env.py Env method
-def __setitem__(self, name: str, value: Value) -> None:
+def __setitem__(self, name: str, value: T) -> None:
     self.values[name] = value
 ```
 
@@ -719,7 +719,7 @@ variables. Once a variable exists, we need a way to look it up.
 
 ```python
 # lox/env.py Env method
-def __getitem__(self, name: str) -> Value:
+def __getitem__(self, name: str) -> T:
     if name in self.values:
         return self.values[name]
     raise NameError(name)
@@ -1120,7 +1120,7 @@ of using `__setitem__()` on Env, it calls this new method:
 
 ```python
 # lox/env.py Env method
-def assign(self, name: str, value: Value) -> None:
+def assign(self, name: str, value: T) -> None:
     if name in self.values:
         self.values[name] = value
     else:
