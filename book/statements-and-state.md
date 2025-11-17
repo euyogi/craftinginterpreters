@@ -1351,9 +1351,9 @@ with support for this nesting. First, we give each environment a reference to
 its enclosing one.
 
 ```python
-# lox/types.py replace Env fields
+# lox/env.py replace Env fields
     ...
-    values: dict[str, Value] = field(default_factory=dict)
+    values: dict[str, T] = field(default_factory=dict)
     enclosing: Env | None = None
     ...
 ```
@@ -1377,7 +1377,7 @@ assume everyone is living on the bleeding edge.
 </aside>
 
 ```python
-# lox/types.py Env method
+# lox/env.py Env method
 def push(self) -> Env:
     return Env(enclosing=self)
 ```
@@ -1388,7 +1388,7 @@ with existing variables and they need to walk the chain to find them. First,
 lookup:
 
 ```python
-# lox/types.py Env.__getitem__
+# lox/env.py Env.__getitem__
 # Before raising
     ...
     if self.enclosing is not None:
