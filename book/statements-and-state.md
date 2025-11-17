@@ -634,7 +634,7 @@ Python would share that single dictionary instance across all instances of
 `Env`. In fact, newer versions of Python will even stop us from doing that and
 raise an error during initialization.
 
-</span>
+</aside>
 
 There’s a Python dict in there to store the bindings. It uses bare strings for
 the keys, not tokens. A token represents a unit of code at a specific place in
