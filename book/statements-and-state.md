@@ -718,7 +718,7 @@ So, to keep the two modes consistent, we'll allow it -- at least for global
 variables. Once a variable exists, we need a way to look it up.
 
 ```python
-# lox/types.py Env method
+# lox/env.py Env method
 def __getitem__(self, name: str) -> Value:
     if name in self.values:
         return self.values[name]
